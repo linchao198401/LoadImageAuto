@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Load Image Auto</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script src="load.js"></script>
+	</head>
+	<body>
+		<h1>Load Image Auto</h1>
+		<label for="title">Title</label>
+		<input id="title" name="title" value="bookName" />
+		<br/>
+		<label for="season">Season</label>
+		<input id="season" name="season" value="1"/>
+		<br/>
+		<label for="pages">Pages in season</label>
+		<input id="pages" name="pages" value="10"/>
+		<br/>
+		<label for="imgURL">Image URL</label>
+		<input id="imgURL" name="imgURL" style="width: 1000px" value="http://1.kangdm.com/comic_img/GHI/50/%PART_ONE%/Naruto0%PART_ONE%-%PART_TWO%.jpg"/>
+		<br/>
+		<button id="loadButton">
+			Load
+		</button>
+		<br/>
+		<pre>
+			Set title
+			Set season
+			Set pages
+			Set the Image URL pattern, %PART_ONE%, %PART_TWO%
+			Click load
+			After the images load, Ctrl + S to save the images
+		</pre>
+		<img id="imageTemplate" style="width: 100px; height: 100px; display:none; margin: 10px; border: 1px solid black" />
+		<div id="container"></div>
+	</body>
+</html>
