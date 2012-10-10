@@ -10,7 +10,7 @@ $(function() {
 
 		var imageTemplate = $("#imageTemplate");
 		var str = $("#imgURL").val();
-		// http://1.kangdm.com/comic_img/GHI/50/%PART_ONE%/Naruto0%PART_ONE%-%PART_TWO%.jpg
+		// http://pic.ziti8.com/F/fqczrj/0%PART_ONE%/%PART_TWO%.jpg
 
 		var season = $("#season").val();
 		var replacements = {
