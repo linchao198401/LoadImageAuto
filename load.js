@@ -19,17 +19,23 @@ $(function() {
 		var replacedPartOneStr = str.replace(/%\w+%/g, function(all) {
 			return replacements[all] || all;
 		});
-		var pages = $("#pages").val();
-		console.log(pages);
-		for(var partTwo = 0; partTwo < pages; partTwo++) {
-			var pageNumber = partTwo + 1;
+		pages = $("#pages").val();
+
+		currentPageNumber = 1;
+
+		function displayImage() {
+			var pageNumber = currentPageNumber;
 			if(pageNumber < 10) {
 				var replacements = {
 					"%PART_TWO%" : "00" + pageNumber
 				};
-			} else {
+			} else if (pageNumber < 100) {
 				var replacements = {
 					"%PART_TWO%" : "0" + pageNumber
+				};
+			} else {
+				var replacements = {
+					"%PART_TWO%" : "" + pageNumber
 				};
 			}
 			var imageStr = replacedPartOneStr.replace(/%\w+%/g, function(all) {
@@ -39,7 +45,14 @@ $(function() {
 			imageTemplate.clone().removeAttr("id").attr("src", imageStr).css({
 				"display" : "inline-block"
 			}).appendTo("#container");
+			currentPageNumber++;
+			if (currentPageNumber < pages) {
+				setTimeout(displayImage, 400);
+			};
 		}
+
+		setTimeout(displayImage, 400);
+
 		var title = $("#title").val();
 		top.document.title = title + season;
 	})
